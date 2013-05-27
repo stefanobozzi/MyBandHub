@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyBand</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">WEASWLEKJFSALKJFSLAK</string>
+    <string name="title_activity_my_lives">MyLives</string>
+    <string name="title_activity_my_gallery">MyGallery</string>
+    <string name="title_activity_my_texts">MyTexts</string>
+    <string name="title_activity_my_beats">MyBeats</string>
+    <string name="my_lives_btn">MyLives</string>
+    <string name="my_gallery_btn">MyGallery</string>
+    <string name="my_texts_btn">MyTexts</string>
+    <string name="my_beats_btn">MyBeats</string>
+    <string name="title_activity_add_live">Add Live</string>
+    <string name="concert_name">Concert name:</string>
+    <string name="band_name">Band name:</string>
+    <string name="place_name_tv">Place:</string>
+    <string name="date_tv">Date:</string>
+    <string name="hour_tv">Hour:</string>
+    <string name="notes_tv">Notes:</string>
+    <string name="submit_btn">Submit</string>
+    <string name="title_activity_view_lives">ViewLives</string>
+    <string name="title_activity_view_poster">ViewPoster</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="save_photo">Save Photo</string>
+    <string name="discard">Discard</string>
+    <string name="title_activity_record_live">LivePhoto</string>
+    <string name="uri_btn">Assegna Foto</string>
+    <string name="delete_live">Delete</string>
+    <string name="modify">Modify</string>
+    <string name="view_all">Visualizza tutto</string>
+    <string name="view_album">Visualizza per album</string>
+    <string name="view">Visualizza</string>
+    <string name="text_ontop_reclive">Scegli su quale album aggiungere la foto</string>
+    <string name="title_activity_take_live_photos">TakeLivePhotos</string>
+    <string name="import_photo">Import Photo</string>
+    <string name="added_success">La foto è stata aggiunta correttamente all\'album</string>
+    <string name="take_another_photo">Take Another Photo</string>
+    <string name="title_activity_view_gallery">ViewGallery</string>
+
+</resources>

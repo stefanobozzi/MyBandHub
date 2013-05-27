@@ -1,0 +1,200 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".AddLive" >
+
+        <TextView
+            android:id="@+id/concert_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/concert_name" />
+
+        <EditText
+            android:id="@+id/concert_name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/concert_name_tv"
+            android:layout_alignBottom="@+id/concert_name_tv"
+            android:layout_alignParentRight="true"
+            android:ems="8" />
+
+        <TextView
+            android:id="@+id/band_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/concert_name_tv"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/band_name" />
+
+        <EditText
+            android:id="@+id/band_name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/band_name_tv"
+            android:layout_alignBottom="@+id/band_name_tv"
+            android:layout_alignParentRight="true"
+            android:ems="8" />
+
+        <!-- place -->
+
+        <CheckBox
+            android:id="@+id/place_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/band_name_tv"
+            android:layout_marginTop="15dp"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/place_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/place_checkbox"
+            android:layout_alignBottom="@+id/place_checkbox"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/place_checkbox"
+            android:text="@string/place_name_tv" />
+
+        <EditText
+            android:id="@+id/place_name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/place_name_tv"
+            android:layout_alignBottom="@+id/place_name_tv"
+            android:layout_alignParentRight="true"
+            android:ems="8" />
+
+        <!-- date -->
+
+        <CheckBox
+            android:id="@+id/date_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/place_checkbox"
+            android:layout_marginTop="20dp"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/date_checkbox"
+            android:layout_alignBottom="@+id/date_checkbox"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/date_checkbox"
+            android:text="@string/date_tv" />
+        <!--
+qui è da guardare la classe datepicker....per intanto metto un edit
+text normale    
+    <DatePicker 
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignBaseline="@+id/date_tv"
+        android:layout_alignBottom="@+id/date_tv"      
+        
+        />
+        -->
+
+        <EditText
+            android:id="@+id/date_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/date_checkbox"
+            android:layout_alignBottom="@+id/date_checkbox"
+            android:layout_alignParentRight="true"
+            android:ems="8" />
+
+        <!-- hours -->
+
+        <CheckBox
+            android:id="@+id/hour_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/date_checkbox"
+            android:layout_marginTop="15dp"
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/hour_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/hour_checkbox"
+            android:layout_alignBottom="@+id/hour_checkbox"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/hour_checkbox"
+            android:text="@string/hour_tv" />
+
+        <EditText
+            android:id="@+id/hour_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/hour_tv"
+            android:layout_alignBottom="@+id/hour_tv"
+            android:layout_alignParentRight="true"
+            android:ems="8" />
+
+        <!-- notes -->
+
+        <CheckBox
+            android:id="@+id/notes_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/hour_checkbox"
+            android:layout_marginTop="15dp"
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/notes_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/notes_checkbox"
+            android:layout_alignBottom="@+id/notes_checkbox"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/notes_checkbox"
+            android:text="@string/notes_tv" />
+
+        <EditText
+            android:id="@+id/notes_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/notes_tv"
+            android:layout_alignBottom="@+id/notes_tv"
+            android:layout_alignParentRight="true"
+            android:ems="8" />
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notes_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/submit_btn" />
+    </RelativeLayout>
+
+</ScrollView>

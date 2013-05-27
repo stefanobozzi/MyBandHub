@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="con.example.myband"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="con.example.myband.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="con.example.myband.MyLives"
+            android:label="@string/title_activity_my_lives" >
+        </activity>
+        <activity
+            android:name="con.example.myband.MyGallery"
+            android:label="@string/title_activity_my_gallery" >
+        </activity>
+        <activity
+            android:name="con.example.myband.MyTexts"
+            android:label="@string/title_activity_my_texts" >
+        </activity>
+        <activity
+            android:name="con.example.myband.MyBeats"
+            android:label="@string/title_activity_my_beats" >
+        </activity>
+        <activity
+            android:name="con.example.myband.AddLive"
+            android:label="@string/title_activity_add_live"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="con.example.myband.ViewLives"
+            android:label="@string/title_activity_view_lives" >
+        </activity>
+        <activity
+            android:name="con.example.myband.ViewPoster"
+            android:label="@string/title_activity_view_poster"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="con.example.myband.RecordLive"
+            android:label="@string/title_activity_record_live" >
+        </activity>
+        <activity
+            android:name="con.example.myband.TakeLivePhotos"
+            android:label="@string/title_activity_take_live_photos" >
+        </activity>
+        <activity
+            android:name="con.example.myband.ViewGallery"
+            android:label="@string/title_activity_view_gallery" >
+        </activity>
+    </application>
+
+</manifest>
