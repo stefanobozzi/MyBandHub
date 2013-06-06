@@ -63,10 +63,7 @@ public class TakeLivePhotos extends Activity {
 
 			@Override
 			public void onClick(View v) {
-
-				// crea la cartella dell'album e ci salva dentro la foto che
-				// verrà scattata
-
+				
 
 				String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
 						.format(new Date());
@@ -78,11 +75,11 @@ public class TakeLivePhotos extends Activity {
 				path += "/MyBand/" + concert + "/";
 				String pathComplete = path.concat(fname);
 
-				File file = new File(pathComplete);
+				File directory = new File(path);
+				directory.mkdirs();
 
-				file.mkdirs();
-
-				Uri u = Uri.fromFile(file);
+				File photo = new File(pathComplete); 
+				Uri u = Uri.fromFile(photo);
 				Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 				i.putExtra(MediaStore.EXTRA_OUTPUT, u);
 				startActivityForResult(i, TAKE_PHOTO_ACTION_CODE);
@@ -147,6 +144,10 @@ public class TakeLivePhotos extends Activity {
 
 			// nascondo i bottoni e mostro i nascosti
 
+			sendBroadcast (
+				    new Intent(Intent.ACTION_MEDIA_MOUNTED, 
+				            Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+			
 			import_btn.setVisibility(View.GONE);
 			take_btn.setVisibility(View.GONE);
 
@@ -195,99 +196,4 @@ public class TakeLivePhotos extends Activity {
 }
 
 
-
-
-
-
-
-
-/*
- * super.onActivityResult(requestCode, resultCode, data);
- * 
- * if (requestCode == TAKE_PHOTO_ACTION_CODE && resultCode == RESULT_OK) {
- * 
- * // nascondo i bottoni e mostro i nascosti
- * 
- * import_btn.setVisibility(View.GONE); take_btn.setVisibility(View.GONE);
- * 
- * take_another = (Button) findViewById(R.id.take_another);
- * take_another.setVisibility(View.VISIBLE);
- * 
- * take_another.setOnClickListener(new OnClickListener() {
- * 
- * @Override public void onClick(View v) {
- * 
- * Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
- * 
- * //i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.parse(total));
- * startActivityForResult(i, TAKE_PHOTO_ACTION_CODE);
- * 
- * } });
- * 
- * added_success = (TextView) findViewById(R.id.added_success);
- * added_success.setVisibility(View.VISIBLE);
- * 
- * // salva veramente la foto nell'album Bundle datas = data.getExtras(); Bitmap
- * myPhoto = (Bitmap) datas.get("data");
- * 
- * String album = Environment.getExternalStorageDirectory().toString() +
- * "/MyBand/" + concert;
- * 
- * saveImage(myPhoto, album);
- * 
- * Uri uri = Uri.fromFile(file); String uri_string = uri.toString();
- * 
- * // trova il nome della band
- * 
- * String[] select = { DBReference.DBLives.COLUMN_BAND_NAME }; String[] args = {
- * concert }; Cursor c = db.query(DBReference.DBLives.TABLE_NAME, select,
- * DBReference.DBLives.COLUMN_CONCERT_NAME + " = ?", args, null, null, null);
- * String band = null;
- * 
- * if (c != null) { // per forza if (c.moveToFirst()) { band = c.getString(c
- * .getColumnIndex(DBReference.DBLives.COLUMN_BAND_NAME));
- * 
- * }
- * 
- * }
- * 
- * c.close();
- * 
- * try { ContentValues v = new ContentValues();
- * v.put(DBReference.DBPhotos.COLUMN_NAME, fname);
- * v.put(DBReference.DBPhotos.COLUMN_CONCERT_NAME, concert);
- * v.put(DBReference.DBPhotos.COLUMN_URI, uri_string);
- * v.put(DBReference.DBPhotos.COLUMN_BAND_NAME, band);
- * 
- * long riga = db.insert(DBReference.DBPhotos.TABLE_NAME, "null", v); Toast
- * toast = Toast.makeText(getApplicationContext(), "inserito riga" + riga +
- * "\n file name: " + fname + "\n concert: " + concert + "\n uri: " + uri_string
- * + " \n band name: " + band, Toast.LENGTH_LONG); toast.show(); } catch
- * (SQLException e) { }
- * 
- * }
- * 
- * 
- * 
- * 
- * private void saveImage(Bitmap finalBitmap, String album) {
- * 
- * File myDir = new File(album); myDir.mkdirs();
- * 
- * // genera nome file String timeStamp = new
- * SimpleDateFormat("yyyyMMdd_HHmmss") .format(new Date());
- * 
- * fname = JPEG_FILE_PREFIX + timeStamp + JPEG_FILE_SUFFIX; file = new
- * File(myDir, fname); if (file.exists()) file.delete(); try { FileOutputStream
- * out = new FileOutputStream(file);
- * finalBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out); out.flush();
- * out.close();
- * 
- * } catch (Exception e) { e.printStackTrace(); }
- * 
- * sendBroadcast(new Intent( Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" +
- * Environment.getExternalStorageDirectory())));
- * 
- * }
- */
 

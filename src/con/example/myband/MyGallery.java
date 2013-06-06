@@ -26,7 +26,7 @@ import android.widget.Toast;
 
 public class MyGallery extends Activity {
 
-	public final static String ALBUM_SELECTED_KEY = "albumkey";
+	public final static String CONCERT_SELECTED_KEY = "albumkey";
 	
 	RadioButton view_all;
 	RadioButton view_album;
@@ -73,16 +73,16 @@ public class MyGallery extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				
-				String item_selected = (String)arg0.getItemAtPosition(position);
+				String concert_selected = (String)arg0.getItemAtPosition(position);
 				
-				String complete_path = root + item_selected + "/";
-				File f = new File(complete_path);
+				/*String complete_path = root + item_selected + "/";
+				File f = new File(complete_path);*/
 				
-				/*
+				
 				Intent i = new Intent(MyGallery.this, ViewGallery.class);
-				i.putExtra(ALBUM_SELECTED_KEY, complete_path);
+				i.putExtra(CONCERT_SELECTED_KEY, concert_selected);
 				startActivity(i);
-				*/
+				
 			}
 		});
 	}
